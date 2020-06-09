@@ -2,7 +2,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$db = "usth_diplomedb";
+$db = "university";
 $conn = mysqli_connect($server,$user,$password,$db);
 require_once('php/php-excel-reader/excel_reader2.php');
 require_once('php/SpreadsheetReader.php');
@@ -130,7 +130,7 @@ require_once('php/diversity.php');
 										echo '<thead>';
 										echo '<tr class="info">';
 										echo '<td></td>';
-										for ($k = 1; $k <= 15; $k++) {
+										for ($k = 0; $k <= 12; $k++) {
 											echo '<td>'.$Row[$k].'</td>';
 										}
 										echo '</tr>';
@@ -144,7 +144,7 @@ require_once('php/diversity.php');
 											echo '<tr class="warming">';
 										}
 										echo '<td><form method="post" action="printb.php?id='.$Row[0].'" target="_blank"><input type="submit"></td>';
-										for ($k = 1; $k <= 15; $k++) {
+										for ($k = 0; $k <= 12; $k++) {
 											
 											
 											echo '<td>'.$Row[$k].'</td>';
@@ -153,24 +153,25 @@ require_once('php/diversity.php');
 																						
 											
 										}
-										$student_id = mysqli_real_escape_string($conn,$Row[1]);
-										$v_spec = mysqli_real_escape_string($conn,$Row[2]);
-										$e_spec = mysqli_real_escape_string($conn,$Row[3]);
-										$v_grade = mysqli_real_escape_string($conn,$Row[4]);
-										$e_grade = mysqli_real_escape_string($conn,$Row[5]);
-										$v_fullname = mysqli_real_escape_string($conn,$Row[6]);
-										$e_fullname = mysqli_real_escape_string($conn,$Row[7]);
-										$v_bdate = mysqli_real_escape_string($conn,$Row[16]);
+										$profile_id = mysqli_real_escape_string($conn,$Row[0]);
+										$fullName = mysqli_real_escape_string($conn,$Row[1]);
+										$gender = mysqli_real_escape_string($conn,$Row[2]);
+										$DOB = mysqli_real_escape_string($conn,$Row[3]);
+										$POB = mysqli_real_escape_string($conn,$Row[4]);
+										$nationality = mysqli_real_escape_string($conn,$Row[5]);
+										$ethnicity = mysqli_real_escape_string($conn,$Row[6]);
+										$email = mysqli_real_escape_string($conn,$Row[7]);
 										
 										
 										
 										
-										$e_bdate = mysqli_real_escape_string($conn,$Row[9]);
-										$v_bplace = mysqli_real_escape_string($conn,$Row[10]);
-										$e_bplace = mysqli_real_escape_string($conn,$Row[11]);
-										$diplome_id = mysqli_real_escape_string($conn,$Row[14]);
-										$document_id = mysqli_real_escape_string($conn,$Row[15]);
-										$query = "insert into tab_bachelor(student_id,v_spec,e_spec,v_grade,e_grade,v_fullname,e_fullname,v_bdate,e_bdate,v_bplace,e_bplace,diplome_id,document_id) values('".$student_id."','".$v_spec."','".$e_spec."','".$v_grade."','".$e_grade."','".$v_fullname."','".$e_fullname."','".$v_bdate."','".$e_bdate."','".$v_bplace."','".$e_bplace."','".$diplome_id."','".$document_id."')";
+										$phoneNum = mysqli_real_escape_string($conn,$Row[8]);
+										$martialStatus = mysqli_real_escape_string($conn,$Row[9]);
+										$address = mysqli_real_escape_string($conn,$Row[10]);
+										$city = mysqli_real_escape_string($conn,$Row[11]);
+										$country= mysqli_real_escape_string($conn,$Row[12]);
+										$query = "insert into profile(id,fullName,gender,dob,pob,nationality,ethnicity,mail,phoneNum,martialStatus,address,city,country) 
+										values('".$profile_id."','".$fullName."','".$gender."','".$DOB."','".$POB."','".$nationality."','".$ethnicity."','".$email."','".$phoneNum."','".$martialStatus."','".$address."','".$city."','".$country."')";
 										$result = mysqli_query($conn, $query);
 										echo '</tr>';		
 									}

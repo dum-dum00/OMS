@@ -70,42 +70,66 @@
 				<li class="sidebar-search">
 					<div class="input-group custom-search-form">
 						<form action="php/search.php" method="POST">
-							<!-- <input type="text" name="search" placeholder="Search...">
+							<input type="text" name="search" placeholder="Search...">
 								<span class="input-group-btn">
-									<button class="btn btn-primary" type="button">
+									<button class="btn btn-primary" name="submit-search" type="submit">
 										<i class="fa fa-search" name="submit-search" ></i>
 									</button>
-								</span> -->
-							<input type="text" name="search" placeholder="Search">
-    						<button type="submit" name="submit-search">Search</button>
+								</span>
 						</form>
 					</div>
 				</li>
 				<li>
-					<a href="bachelor.php"><i class="fa fa-th-large fa-fw"></i> Bachelor <span class="fa arrow"></span></a>
+					<a href="bachelor.php"><i class="fa fa-th-large fa-fw"></i> Student <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="bachelor.php">View/Print</a>
+							<a href="student.php">View/Print</a>
 							
 						</li>
 						<li>
-							<a href="import.php">Import</a>
+							<a href="studentEdit.php">Edit</a>
+							
+						</li>
+						<li>
+							<a href="importStudent.php">Import</a>
 							
 						</li>	
 					</ul>
 				</li>
+				<li>
+					<a href="course.php"><i class="fa fa-th-large fa-book"></i> Course <span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="course.php">View/Print</a>
+							
+						</li>
+						<li>
+							<a href="courseEdit.php">Edit</a>
+							
+						</li>
+						<li>
+							<a href="importCourse.php">Import</a>
+							
+						</li>	
+					</ul>
+				</li>
+				<li>
+					<a href="diploma.php"><i class="fa fa-th-large fa-trophy"></i> Diploma <span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="diploma.php">View/Print</a>
+							
+						</li>
+						<li>
+							<a href="importDiploma.php">Import</a>
+							
+						</li>	
+						<li>
+							<a href="export.php">Export</a>
+						</li>
+					</ul>
+				</li>
 
-				<li>
-					
-				</li>
-				<li>
-					<a href="master.php"><i class="fa fa-gears fa-fw"></i> Master <span class="fa arrow"></span></a>
-					
-				</li>
-				<li>
-					<a href="doctor.php"><i class="fa fa-signal fa-fw"></i> Doctor</span></a>
-
-				</li>
 			</ul>
 
 		</div>

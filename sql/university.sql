@@ -31,16 +31,15 @@ USE `university`;
 
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE IF NOT EXISTS `course` (
-  `id` varchar(20) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `major_id` int(11) NOT NULL,
   `courseName` varchar(255) NOT NULL,
   `courseName_v` varchar(255) NOT NULL,
   `courseCode` varchar(255) NOT NULL,
-  `sumarry` text NOT NULL,
-  `acaYear` varchar(255) NOT NULL,
-  `totalHour` time NOT NULL,
-  `lectureHour` time NOT NULL,
-  `labHour` time NOT NULL,
+  `summary` text NOT NULL,
+  `totalHour` int NOT NULL,
+  `lectureHour` int NOT NULL,
+  `labHour` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `major_id` (`major_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -55,7 +54,7 @@ DROP TABLE IF EXISTS `course_report`;
 CREATE TABLE IF NOT EXISTS `course_report` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `transcriptDetails_id` int(11) NOT NULL,
-  `course_id` varchar(20) NOT NULL,
+  `course_id` int(11) NOT NULL,
   `final` varchar(5) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `transcriptDetails_id` (`transcriptDetails_id`),
@@ -307,7 +306,7 @@ ALTER TABLE `transcript_detail`
 --
 -- Constraints for table `diploma`
 ALTER TABLE `diploma`
-  ADD CONSTRAINT `diploma_ibfk_4` FOREIGN KEY (`studentId`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `diploma_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `student` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
