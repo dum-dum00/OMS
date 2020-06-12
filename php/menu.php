@@ -4,7 +4,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="#">Home</a>
+		<a class="navbar-brand" href="index.php">Home</a>
 	</div>
 
 	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -83,11 +83,11 @@
 					<a href="bachelor.php"><i class="fa fa-th-large fa-fw"></i> Student <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="student.php">View/Print</a>
+							<a href="viewStudent.php">View</a>
 							
 						</li>
 						<li>
-							<a href="studentEdit.php">Edit</a>
+							<a href="editStudent.php">Edit</a>
 							
 						</li>
 						<li>
@@ -100,11 +100,11 @@
 					<a href="course.php"><i class="fa fa-th-large fa-book"></i> Course <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="course.php">View/Print</a>
+							<a href="viewCourse.php">View</a>
 							
 						</li>
 						<li>
-							<a href="courseEdit.php">Edit</a>
+							<a href="editCourse.php">Edit</a>
 							
 						</li>
 						<li>
@@ -117,7 +117,7 @@
 					<a href="diploma.php"><i class="fa fa-th-large fa-trophy"></i> Diploma <span class="fa arrow"></span></a>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="diploma.php">View/Print</a>
+							<a href="viewDiploma.php">View</a>
 							
 						</li>
 						<li>

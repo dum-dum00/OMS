@@ -130,7 +130,7 @@ require_once('php/diversity.php');
 										echo '<thead>';
 										echo '<tr class="info">';
 										echo '<td></td>';
-										for ($k = 0; $k <= 12; $k++) {
+										for ($k = 0; $k <= 15; $k++) {
 											echo '<td>'.$Row[$k].'</td>';
 										}
 										echo '</tr>';
@@ -144,7 +144,7 @@ require_once('php/diversity.php');
 											echo '<tr class="warming">';
 										}
 										echo '<td><form method="post" action="printb.php?id='.$Row[0].'" target="_blank"><input type="submit"></td>';
-										for ($k = 0; $k <= 12; $k++) {
+										for ($k = 0; $k <= 15; $k++) {
 											
 											
 											echo '<td>'.$Row[$k].'</td>';
@@ -155,23 +155,26 @@ require_once('php/diversity.php');
 										}
 										$profile_id = mysqli_real_escape_string($conn,$Row[0]);
 										$fullName = mysqli_real_escape_string($conn,$Row[1]);
-										$gender = mysqli_real_escape_string($conn,$Row[2]);
-										$DOB = mysqli_real_escape_string($conn,$Row[3]);
-										$POB = mysqli_real_escape_string($conn,$Row[4]);
-										$nationality = mysqli_real_escape_string($conn,$Row[5]);
-										$ethnicity = mysqli_real_escape_string($conn,$Row[6]);
-										$email = mysqli_real_escape_string($conn,$Row[7]);
+										$fullName_v = mysqli_real_escape_string($conn, $Row[2]);
+										$gender = mysqli_real_escape_string($conn,$Row[3]);
+										$DOB = mysqli_real_escape_string($conn,$Row[4]);
+										$DOB_v = mysqli_real_escape_string($conn,$Row[5]);
+										$POB = mysqli_real_escape_string($conn,$Row[6]);
+										$POB_v = mysqli_real_escape_string($conn,$Row[7]);
+										$nationality = mysqli_real_escape_string($conn,$Row[8]);
+										$ethnicity = mysqli_real_escape_string($conn,$Row[9]);
+										$email = mysqli_real_escape_string($conn,$Row[10]);
 										
 										
 										
 										
-										$phoneNum = mysqli_real_escape_string($conn,$Row[8]);
-										$martialStatus = mysqli_real_escape_string($conn,$Row[9]);
-										$address = mysqli_real_escape_string($conn,$Row[10]);
-										$city = mysqli_real_escape_string($conn,$Row[11]);
-										$country= mysqli_real_escape_string($conn,$Row[12]);
-										$query = "insert into profile(id,fullName,gender,dob,pob,nationality,ethnicity,mail,phoneNum,martialStatus,address,city,country) 
-										values('".$profile_id."','".$fullName."','".$gender."','".$DOB."','".$POB."','".$nationality."','".$ethnicity."','".$email."','".$phoneNum."','".$martialStatus."','".$address."','".$city."','".$country."')";
+										$phoneNum = mysqli_real_escape_string($conn,$Row[11]);
+										$martialStatus = mysqli_real_escape_string($conn,$Row[12]);
+										$address = mysqli_real_escape_string($conn,$Row[13]);
+										$city = mysqli_real_escape_string($conn,$Row[14]);
+										$country= mysqli_real_escape_string($conn,$Row[15]);
+										$query = "insert into profile(id,fullName,fullName_v, gender,dob,dob_v, pob,pob_v, nationality,ethnicity,mail,phoneNum,martialStatus,address,city,country) 
+										values('".$profile_id."','".$fullName."','".$fullName_v."','".$gender."','".$DOB."','".$DOB_v."','".$POB."','".$POB_v."','".$nationality."','".$ethnicity."','".$email."','".$phoneNum."','".$martialStatus."','".$address."','".$city."','".$country."')";
 										$result = mysqli_query($conn, $query);
 										echo '</tr>';		
 									}

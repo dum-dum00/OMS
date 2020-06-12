@@ -124,9 +124,12 @@ DROP TABLE IF EXISTS `profile`;
 CREATE TABLE IF NOT EXISTS `profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(255) NOT NULL,
+  `fullName_v` varchar(255) NOT NULL,
   `gender` enum('female','male') NOT NULL,
-  `dob` date NOT NULL,
+  `dob` varchar(255) NOT NULL,
+  `dob_v` varchar(255) NOT NULL,
   `pob` varchar(255) NOT NULL,
+  `pob_v` varchar(255) NOT NULL,
   `nationality` varchar(255) NOT NULL,
   `ethnicity` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
@@ -161,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `program` (
 
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE IF NOT EXISTS `student` (
-  `id` varchar(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `profile_id` int(11) NOT NULL,
   `major_id` int(11) NOT NULL,
@@ -212,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `transcript_detail` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL, 
   `password` varchar(20) NOT NULL,
   `userType` enum('student','staff') NOT NULL,
   PRIMARY KEY (`id`)

@@ -43,8 +43,8 @@ require_once('php/diversity.php');
     <![endif]-->
 </head>
 <body>
-<? if (isset($_POST['submit'])
-	echo $_POST['id']
-
+<?php if (isset($_POST['submit'])
+	echo $_POST['id'];
+?>
 </body>
 </html>

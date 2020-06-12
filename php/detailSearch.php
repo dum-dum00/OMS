@@ -38,9 +38,12 @@
                     <tr class="success">
                         <th>ID</th>
                         <th>Full Name</th>
+                        <th>Full Name in Vietnamese </th>
                         <th>Gender</th>
                         <th>DOB</th>
+                        <th>DOB in Vietnamese </th>
                         <th>POB</th>
+                        <th>POB in Vietnamese</th>
                         <th>Address</th>
                         <th>City</th>
                         <th>Country</th>
@@ -53,9 +56,12 @@
                     <tr>
                         <th>'.$row['id'].'</th>
                         <th>'.$row['fullName'].'</th>
+                        <th>'.$row['fullName_v'].'</th>
                         <th>'.$row['gender'].'</th>
                         <th>'.$row['dob'].'</th>
+                        <th>'.$row['dob_v'].'</th>
                         <th>'.$row['pob'].'</th>
+                        <th>'.$row['pob_v'].'</th>
                         <th>'.$row['address'].'</th>
                         <th>'.$row['city'].'</th>
                         <th>'.$row['country'].'</th>
